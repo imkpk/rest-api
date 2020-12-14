@@ -30,16 +30,19 @@ app.post("/xml2json1", async (req, res) => {
   //   const xmlData = req.rawBody;
   //   const xmlData = "./file.xml";
 
-  console.log(xmlData);
+  // console.log(xmlData);
 
   // Converting XML to JSON
   // const json = JSON.parse(
   // xml2json.toJson(xmlData)
   // )
-
-  const json = xmljson.xml2json(xmlData);
+  const options = {
+    compact: true,
+    mergeAttrs: true
+  };
+  const json = xmljson.xml2json(xmlData, options);
   const jsonParse = JSON.parse(JSON.stringify(json));
-  console.log(jsonParse);
+  // console.log(jsonParse);
 
   const a = await fs.writeFile("db.json", jsonParse);
 
@@ -47,7 +50,7 @@ app.post("/xml2json1", async (req, res) => {
   res.send(json);
 });
 
-app.get("/getdata", async (req, res) => {
+app.get("/", async (req, res) => {
   const fileData = await fs.readFile("db.json");
   res.send(JSON.parse(fileData));
 });
@@ -64,7 +67,7 @@ app.post("/xml2json", async (req, res) => {
   // )
 
   const json = xmljson.xml2json(xmlData);
-  const a = await fs.writeFile("db.json", JSON.parse(json));
+  const a = await fs.writeFile("db.json", json);
   console.log(json);
 
   // Send back the JSON
@@ -72,8 +75,9 @@ app.post("/xml2json", async (req, res) => {
 });
 
 // port to run the server on
-const PORT = 5000;
+// const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`"App stated on PORT: ${PORT}`);
+  console.log(`App stated on PORT: ${PORT}`);
 });
