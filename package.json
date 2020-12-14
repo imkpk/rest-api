@@ -1,5 +1,5 @@
 {
-  "name": "imKPK-rest-api",
+  "name": "pratibha-restapi",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -8,11 +8,12 @@
     "nodemon": "^2.0.6",
     "xml-js": "^1.6.11"
   },
-  "scripts": {
-    "dev": "nodemon ./index.js",
-    "start": "node ."
-  },
   "engines": {
-    "node": "14.7.0"
+    "node": "14.7.0",
+    "npm": "6.14.9"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   }
 }
