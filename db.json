@@ -1,1 +1,34 @@
-{"elements":[{"type":"element","name":"elementSpec","attributes":{"ident":"person","module":"namesdates","mode":"change"},"elements":[{"type":"element","name":"attList","elements":[{"type":"element","name":"attDef","attributes":{"mode":"replace","ident":"age"},"elements":[{"type":"element","name":"datatype","elements":[{"type":"element","name":"dataRef","attributes":{"key":"teidata.enumerated"}}]},{"type":"element","name":"valList","attributes":{"type":"closed"},"elements":[{"type":"element","name":"valItem","attributes":{"ident":"child"},"elements":[{"type":"element","name":"desc","elements":[{"type":"text","text":"less than 18 years of age"}]}]},{"type":"element","name":"valItem","attributes":{"ident":"adult"},"elements":[{"type":"element","name":"desc","elements":[{"type":"text","text":"18 to 65 years of age"}]}]},{"type":"element","name":"valItem","attributes":{"ident":"retired"},"elements":[{"type":"element","name":"desc","elements":[{"type":"text","text":"over 65 years of age"}]}]}]}]}]}]}]}
+{
+  "elementSpec": {
+    "_attributes": {
+      "ident": "person",
+      "module": "namesdates",
+      "mode": "change"
+    },
+    "attList": {
+      "attDef": {
+        "_attributes": { "mode": "replace", "ident": "age" },
+        "datatype": {
+          "dataRef": { "_attributes": { "key": "teidata.enumerated" } }
+        },
+        "valList": {
+          "_attributes": { "type": "closed" },
+          "valItem": [
+            {
+              "_attributes": { "ident": "child" },
+              "desc": { "_text": "less than 18 years of age" }
+            },
+            {
+              "_attributes": { "ident": "adult" },
+              "desc": { "_text": "18 to 65 years of age" }
+            },
+            {
+              "_attributes": { "ident": "retired" },
+              "desc": { "_text": "over 65 years of age" }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

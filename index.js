@@ -36,7 +36,7 @@ app.post("/xml2json1", async (req, res) => {
   // const json = JSON.parse(
   // xml2json.toJson(xmlData)
   // )
-  const options = {
+  let options = {
     compact: true,
     mergeAttrs: true
   };
@@ -65,8 +65,12 @@ app.post("/xml2json", async (req, res) => {
   // const json = JSON.parse(
   //     xml2json.toJson(xmlData)
   // )
+  let options = {
+    compact: true,
+    mergeAttrs: true
+  };
 
-  const json = xmljson.xml2json(xmlData);
+  const json = xmljson.xml2json(xmlData, options);
   const a = await fs.writeFile("db.json", json);
   console.log(json);
 
